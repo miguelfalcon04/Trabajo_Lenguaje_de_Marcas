@@ -1,0 +1,425 @@
+/************************************************************************************************/
+/*  GYM - hoja de estilo de GYM                                                                 */
+/*  Autor: Miguel Falcón                                                                        */
+/*  versión 1.0 - 1/12/2022                                                                     */
+/************************************************************************************************/
+
+/********************************************* ESTILO GENERAL ************************************************/
+
+/* MIS FUENTES */
+@font-face {
+    font-family: titulos ;
+    src: url(../fonts/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: texto;
+    src: url(../fonts/san_frediano_regular.ttf);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{box-sizing: border-box;}
+
+body{
+    background-color: rgb(116, 0, 0);
+    font-family: texto;
+    color: white;
+}
+
+#wrapper{
+    background-color: rgb(0, 0, 0);
+    width: 80%;
+    margin: auto;
+}
+
+/* TÍTULO DE SECCIONES */
+.titulo-seccion{
+    font-family: titulos;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    padding: 4% 0;
+}
+
+.enlace {
+    text-decoration: none;
+    color:darkred;
+    font-weight:bold;}
+
+.enlace:hover {color:rgb(230, 111, 111);}         
+
+.centrado {text-align:center;}
+
+
+/************************************ ESTILO DE NAV (TRAIDE DE W3SCHOOLS) ************************************/
+
+nav{
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    opacity: 0.8;
+}
+
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+  /* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+  /* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+} 
+
+  /* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+    padding: 0;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home").
+Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 900px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+    float: right;
+    display: block;
+    }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. 
+This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 900px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    }
+    .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    }
+}
+
+
+/******************************************** HERO SECTION VIDEO *********************************************/
+
+#myVideo {
+    /* position: fixed; */
+    position: relative;     /* el título estás al mismo nivel que el video no dentro */
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*********************************************** INTRODUCCION ************************************************/
+
+#texto{
+    padding:0 2%;
+    margin:0 4%;
+    border-left:5px solid darkred;
+}
+
+/*************************************************** CHEST **************************************************/
+
+/* contenedor grid */
+.grid2{
+    display: grid;
+    grid-template-columns: 50% 50%; /* Con "auto" lo divide el mismo*/
+}
+
+/* que corra el aire (ver box-sizing arriba) */
+.texto{
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+.texto li{
+    margin-bottom: 20px;
+}
+
+.col2 ul{
+    list-style-image: url(../images/apache.ico);
+}
+
+/* selector combinado (img DENTRO de .col2) */
+.col2 img{
+    margin: 2%;
+    margin-right: 10px;
+    width: 80%;}
+
+.col2 video{
+    margin-left: 50%;
+}
+
+
+/**************************************************** BACK **************************************************/
+
+
+
+/**************************************************** LEGS **************************************************/
+
+.grid3{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.col3 {
+    margin: auto;
+    padding: 20px;
+}
+
+.col3 img{
+    width: 30%;
+    display: block; /* Se puede cambiar el tipo de componente de inline a block */
+    margin: auto; 
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+  /* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+  /* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+  /* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+  /* Style the back side */
+.flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+
+
+
+/*********************************************** BODYBUILDERS ************************************************/
+
+.grid4{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.col4{
+    padding: 20px;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(248, 2, 2, 0.789);
+    transition: 0.3s;
+    background-color: rgb(86, 86, 86);
+    border-radius: 5%;
+}
+
+  /* On mouse-over, add a deeper shadow */
+.card:hover {
+    transition: 1s;
+    box-shadow: 0 8px 16px 0 rgb(255, 255, 255);
+}
+
+  /* Add some padding inside the card container */
+.container1 {
+    padding: 2px 16px;
+    text-align: center;
+}
+
+.card img{ /* selector contextual, solo para las img que estén DENTRO de una card */
+    width: 100%;
+    opacity: 0.6;    /* opcional, para hacer un efecto dinámico con el ratón  */ /*CONJUNTO*/
+    transition: 1s;  /* Cualquier cosa que pueda cambias dinamicamente, tarda 1 segundo */
+    padding: 4%;     /* efecto polaroid */
+    border-radius: 25%; /* efecto ovalado */
+}
+
+.card img:hover{
+    opacity: 1;       /* al poner el ratón encima, se define completamento la imagen */ /*CONJUNTO*/
+}
+
+.card a{
+    text-decoration: none; /* TODO ESTO PARA CONSEGUIR EFECTO BOTÓN */
+    font-weight: bold;
+    background-color: rgb(47, 47, 47);
+    transition: 0.5s;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: inline-block; /* separa el bloque superior y el inferior, pero no acupa el espacio de punta a punta; 
+                            si hubiera otro inline-block lo pondría a continuación...
+                            *** ES LO QUE SE USA EN LAS BARRAS DE NAVEGACIÓN ***/
+}
+
+.card a:hover{
+    background-color: rgb(150, 150, 150); /* para que el boton cambie al poner el ratón encima */
+    color: black;
+}
+
+/************************************************ FIND A GYM *************************************************/
+
+.grid2{
+    display: grid;
+    grid-template-columns: 50% 50%; /* Con "auto" lo divide el mismo*/
+}
+
+/* que corra el aire (ver box-sizing arriba) */
+.texto{
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+.texto li{
+    margin-bottom: 12px;
+}
+
+.col2 ul{
+    list-style-image: url(../images/apache.ico);
+}
+
+/* selector combinado (img DENTRO de .col2) */
+.col2 img{width: 100%;}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 3%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+  /* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/************************************************** FOOTER ***************************************************/
+
+footer{
+    background-color: rgb(#b80909);
+}
+
+.fa {
+    padding: 15px;   /*************/
+    font-size: 20px; /************/
+    width: 50px; 
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%; /************/
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+
+/********************************************** MEDIA QUERIES ************************************************/
+@media only screen and (width<=1000px){
+
+    #wrapper{
+        width: 100%;
+        font-size: 2rem;
+    }
+
+    .grid2{
+        grid-template-columns: 100%; /* el grid pasa a ser de 1 columna en tablets */
+    }
+
+    #lista2{
+        margin-top: -40px;
+    }
+
+    .grid3{
+        grid-template-columns: auto;
+        font-size: 1.5 rem;
+    }
+
+    .grid4{
+        grid-template-columns: 50% 50%; /* el grid pasa a ser de 2 columna en tablets */
+    }
+}
+
+@media only screen and (width<=600px){
+    .grid3{
+        grid-template-columns: 100%;
+    }
+
+    .grid4{
+        grid-template-columns: 100%;
+    }
+}
