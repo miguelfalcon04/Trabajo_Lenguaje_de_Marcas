@@ -21,7 +21,11 @@ html{
     scroll-behavior: smooth;
 }
 
-*{box-sizing: border-box;}
+*{  
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body{
     background-color: rgb(116, 0, 0);
@@ -41,7 +45,7 @@ body{
     font-size: 2.5rem;
     text-align: center;
     font-weight: bold;
-    color: rgb(255, 255, 255);
+    color: rgb(234, 169, 225);
     padding: 4% 0;
 }
 
@@ -122,12 +126,12 @@ This class makes the topnav look good on small screens (display the links vertic
 /******************************************** HERO SECTION VIDEO *********************************************/
 
 #myVideo {
-    /* position: fixed; */
-    position: relative;     /* el título estás al mismo nivel que el video no dentro */
-    right: 0;
-    bottom: 0;
     width: 100%;
     height: 100%;
+}
+
+#hero2{
+    background-color: black;
 }
 
 /*********************************************** INTRODUCCION ************************************************/
@@ -135,112 +139,44 @@ This class makes the topnav look good on small screens (display the links vertic
 #texto{
     padding:0 2%;
     margin:0 4%;
+    font-size: 1.2rem;
     border-left:5px solid darkred;
 }
 
-/*************************************************** CHEST **************************************************/
+/********************************************** CHEST AND BACK ***********************************************/
 
-/* contenedor grid */
 .grid2{
     display: grid;
-    grid-template-columns: 50% 50%; /* Con "auto" lo divide el mismo*/
-}
-
-/* que corra el aire (ver box-sizing arriba) */
-.texto{
-    padding: 20px;
-    font-size: 1.2rem;
+    grid-template-columns: 50% 50%;
 }
 
 .texto li{
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
-.col2 ul{
-    list-style-image: url(../images/apache.ico);
-}
-
-/* selector combinado (img DENTRO de .col2) */
-.col2 img{
-    margin: 2%;
-    margin-right: 10px;
-    width: 80%;}
-
-.col2 video{
-    margin-left: 50%;
-}
-
-
-/**************************************************** BACK **************************************************/
-
-
-
-/**************************************************** LEGS **************************************************/
-
-.grid3{
-    display: grid;
-    grid-template-columns: auto auto auto;
-}
-
-.col3 {
-    margin: auto;
-    padding: 20px;
-}
-
-.col3 img{
-    width: 30%;
-    display: block; /* Se puede cambiar el tipo de componente de inline a block */
-    margin: auto; 
-}
-
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-card {
-    background-color: transparent;
+.imagen1{
+    padding: 2%;
     width: 100%;
-    height: 100%;
-    border: 1px solid #f1f1f1;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
-  /* This container is needed to position the front and back side */
-.flip-card-inner {
+.containervid {
     position: relative;
+    overflow: hidden;
     width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 
-  /* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-
-  /* Position the front and back side */
-.flip-card-front, .flip-card-back {
+  /* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
     position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
+    padding: 2%;
 }
-
-  /* Style the front side (fallback if image is missing) */
-.flip-card-front {
-    background-color: #bbb;
-    color: black;
-}
-
-  /* Style the back side */
-.flip-card-back {
-    background-color: dodgerblue;
-    color: white;
-    transform: rotateY(180deg);
-}
-
-
-
 
 /*********************************************** BODYBUILDERS ************************************************/
 
@@ -251,6 +187,11 @@ This class makes the topnav look good on small screens (display the links vertic
 
 .col4{
     padding: 20px;
+}
+
+p{
+margin-top: 15px;
+margin-bottom: 15px;
 }
 
 .card {
@@ -306,23 +247,11 @@ This class makes the topnav look good on small screens (display the links vertic
 
 /************************************************ FIND A GYM *************************************************/
 
-.grid2{
-    display: grid;
-    grid-template-columns: 50% 50%; /* Con "auto" lo divide el mismo*/
-}
-
 /* que corra el aire (ver box-sizing arriba) */
 .texto{
     padding: 20px;
     font-size: 1.2rem;
-}
-
-.texto li{
-    margin-bottom: 12px;
-}
-
-.col2 ul{
-    list-style-image: url(../images/apache.ico);
+    margin: 2%;
 }
 
 /* selector combinado (img DENTRO de .col2) */
@@ -350,18 +279,36 @@ This class makes the topnav look good on small screens (display the links vertic
 /************************************************** FOOTER ***************************************************/
 
 footer{
-    background-color: rgb(#b80909);
-}
+    background-color: rgb(61, 61, 61);
+    padding: 5% 0%;
+    }
+    
+    .grid3{
+    display: grid;
+    grid-template-columns: 25% 25% 50%;
+    }
+    
+    .col3{
+    padding: 6%;
+    }
+    
 
-.fa {
-    padding: 15px;   /*************/
-    font-size: 20px; /************/
-    width: 50px; 
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-    border-radius: 50%; /************/
-}
+    
+    .col3 img{
+    width: 60%;
+    display: block;
+    margin: auto;
+    }
+
+    .fa{
+        padding: 15px;
+        font-size: 20px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        border-radius: 50%;
+    }
 
 .fa:hover {
     opacity: 0.7;
@@ -369,11 +316,6 @@ footer{
 
 .fa-facebook {
     background: #3B5998;
-    color: white;
-}
-
-.fa-twitter {
-    background: #55ACEE;
     color: white;
 }
 
@@ -400,8 +342,9 @@ footer{
         grid-template-columns: 100%; /* el grid pasa a ser de 1 columna en tablets */
     }
 
-    #lista2{
-        margin-top: -40px;
+
+    .responsive-iframe{
+        width: 100%;
     }
 
     .grid3{
@@ -415,6 +358,15 @@ footer{
 }
 
 @media only screen and (width<=600px){
+
+    .grid2{
+        grid-template-columns: 100%;
+    }
+
+    .responsive-iframe{
+        width: 100%;
+    }
+
     .grid3{
         grid-template-columns: 100%;
     }
